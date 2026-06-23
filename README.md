@@ -9,83 +9,37 @@
 
 ---
 
-## 🚀 The Problem It Solves
-
-Anyone running a Linux server knows this pain:
-- Something breaks at 2AM
-- You `grep -i error /var/log/syslog` through thousands of lines
-- You manually try to figure out *what* went wrong and *why*
-
-**LogSense AI automates this entire process.**
-It finds the important lines, understands the context, and tells you exactly what happened and what to do next.
-
----
-
-## ✨ Features
-
-- **Static Analysis** — scan any log file and get a flagged-line table instantly
-- **Live Monitoring** — tail log files in real time, auto-trigger AI when issues accumulate
-- **AI Root-Cause Analysis** — powered by LLaMA via Groq (free), explains *why* things broke
-- **History & Reports** — every analysis saved locally in SQLite for future review
-- **Format Agnostic** — works on syslog, nginx, app logs, journalctl exports, anything
-- **Works Offline** — pattern-based flagging works even without an API key
-
----
-
-## 📦 Installation
-
-**Requirements:** Python 3.10+, Linux (or WSL/macOS)
+## 🚀 Install in 3 Steps
 
 ```bash
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/logsense.git
+# Step 1 - Clone
+git clone https://github.com/HARSHITRAJPUT81/logsense.git
 cd logsense
 
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
+# Step 2 - Run installer (handles everything)
+bash install.sh
 
-# Install dependencies
-pip install -r requirements.txt
-pip install -e .
-
-# Set up your free API key (get one at https://console.groq.com)
-cp .env.example .env
-nano .env  # paste your GROQ_API_KEY
+# Step 3 - Analyze your system!
+sudo logsense analyze /var/log/syslog
 ```
+
+> 💡 You only need a **free Groq API key** from https://console.groq.com — the installer will ask for it automatically.
 
 ---
 
-## 🛠️ Usage
+## 🛠️ Commands
 
-**Analyze a log file:**
-```bash
-logsense analyze /var/log/syslog
-```
-
-**Watch a log file live:**
-```bash
-sudo logsense watch /var/log/nginx/error.log
-```
-
-**View analysis history:**
-```bash
-logsense report
-```
-
-**Test with a sample log:**
-```bash
-python3 generate_sample_log.py sample.log
-logsense analyze sample.log
-```
+| Command | What it does |
+|---|---|
+| `logsense analyze /var/log/syslog` | Scan a log file for issues |
+| `logsense analyze /var/log/syslog --min-severity 80` | Show only errors and above |
+| `logsense watch /var/log/syslog` | Monitor logs live in real time |
+| `logsense report` | View history of past analyses |
 
 ---
 
 ## 📊 Example Output
 Flagged lines in syslog
----
-
-## 🏗️ Project Structure
 ---
 
 ## 🔧 Tech Stack
@@ -94,27 +48,19 @@ Flagged lines in syslog
 |---|---|
 | Python 3.10+ | Core language |
 | Typer | CLI framework |
-| Rich | Terminal UI (tables, colors) |
+| Rich | Beautiful terminal UI |
 | Groq + LLaMA | Free AI inference |
 | SQLite | Local history storage |
-| python-dotenv | Secure config management |
 
 ---
 
 ## 🗺️ Roadmap
 
-- [ ] Add `--since` flag to filter logs by time range
-- [ ] Support structured JSON log formats
-- [ ] Slack/Discord notifications for critical events
-- [ ] Natural language log search: `logsense search "database errors last night"`
-- [ ] Package as a systemd service for always-on monitoring
-- [ ] Export reports to PDF/HTML
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, open an issue first.
+- [ ] Filter logs by time range (`--since 1h`)
+- [ ] Support JSON structured logs
+- [ ] Slack/Discord notifications
+- [ ] Natural language search
+- [ ] Export reports to PDF
 
 ---
 
@@ -126,6 +72,6 @@ MIT — see [LICENSE](LICENSE)
 
 ## 👨‍💻 Author
 
-**Harshit** — built as a portfolio project combining Linux systems knowledge with AI.
+**Harshit** — built as a portfolio project combining Linux + AI.
 
-> ⭐ If you found this useful, please star the repo!
+> ⭐ Star this repo if you found it useful!
