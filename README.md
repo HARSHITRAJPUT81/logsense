@@ -1,10 +1,10 @@
 ## ⚡ Install in One Command
 
 Linux / macOS:
-curl -fsSL https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense-AI/main/install.sh | bash
 
 Windows (PowerShell as Administrator):
-irm https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense-AI/main/install.ps1 | iex
 
 
 
@@ -23,7 +23,7 @@ irm https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense/main/install.ps1 
 ## 🚀 Install in One Command
 
 \`\`\`bash
-curl -fsSL https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense-AI/main/install.sh | bash
 \`\`\`
 
 > 💡 You need a **free Groq API key** from https://console.groq.com — the installer will ask for it automatically. No credit card needed.
@@ -105,6 +105,6 @@ MIT 2026 Harshit Rajput
 
 Harshit Rajput
 GitHub: https://github.com/HARSHITRAJPUT81
-Project: https://github.com/HARSHITRAJPUT81/logsense
+Project: https://github.com/HARSHITRAJPUT81/logsense-AI
 
 Star this repo if you found it useful!
