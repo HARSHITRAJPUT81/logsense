@@ -1,3 +1,14 @@
+## ⚡ Install in One Command
+
+Linux / macOS:
+curl -fsSL https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense/main/install.sh | bash
+
+Windows (PowerShell as Administrator):
+irm https://raw.githubusercontent.com/HARSHITRAJPUT81/logsense/main/install.ps1 | iex
+
+
+
+
 # 🔍 LogSense AI
 
 > AI-powered Linux log analyzer — detects errors, crashes and anomalies, then explains the root cause and suggests a fix using LLaMA AI.
