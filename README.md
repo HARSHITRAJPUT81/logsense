@@ -1,4 +1,5 @@
-# 🔍 LogSense AI
+# 🔍 LogSense AI 
+> Built as a portfolio project to solve a real DevOps problem — making Linux log analysis fast and intelligent using AI.
 
 > AI-powered log analyzer for Linux, macOS and Windows — detects errors, crashes and anomalies, then explains the root cause and suggests a fix using LLaMA AI.
 
@@ -55,9 +56,10 @@ logsense analyze "$env:SystemRoot\System32\winevt\Logs\Application.evtx"
 
 | OS | Install Command |
 |---|---|
-| Linux | curl install.sh bash |
-| macOS | curl install.sh bash |
-| Windows | irm install.ps1 iex |
+| Linux | curl -fsSL .../install.sh \| bash |
+| macOS | curl -fsSL .../install.sh \| bash |
+| Windows | irm .../install.ps1 \| iex |
+
 
 ---
 
@@ -114,6 +116,22 @@ logsense/
 | python-dotenv | Secure API key management |
 
 ---
+
+## 📊 Example Output
+
+\```
+Line  Severity   Text
+5     FATAL      Out of memory: kill process...
+6     ERROR      Database connection refused...
+11    ERROR      Connection timed out...
+
+AI Analysis
+Severity    : critical
+Root cause  : OOM kills and DB connection loss
+Fix         : Increase memory, check DB pool
+\```
+
+
 
 ## 🗺️ Roadmap
 
